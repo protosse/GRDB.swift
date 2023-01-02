@@ -37,7 +37,6 @@ let package = Package(
         .watchOS(.v4),
     ],
     products: [
-        .library(name: "CSQLite", targets: ["CSQLite"]),
         .library(name: "GRDB", targets: ["GRDB"]),
         .library(name: "GRDB-dynamic", type: .dynamic, targets: ["GRDB"]),
     ],
@@ -45,10 +44,6 @@ let package = Package(
     targets: [
         .target(
             name: "GRDB",
-            dependencies: ["CSQLite"],
-            path: "GRDB",
-            cSettings: cSettings,
-            swiftSettings: swiftSettings),
             dependencies: ["SQLCipher"],
             path: "GRDB",
             cSettings: [
